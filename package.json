@@ -1,0 +1,19 @@
+{
+  "name": "fcc-exer-tracker",
+  "version": "1.0.0",
+  "description": "FCC Exercise Tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keedeeBear/FCC-Exercise-Tracker.git"
+  },
+  "author": "Antonia Gherghel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keedeeBear/FCC-Exercise-Tracker/issues"
+  },
+  "homepage": "https://github.com/keedeeBear/FCC-Exercise-Tracker#readme"
+}

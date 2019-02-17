@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Exercise Tracker - FreeCodeCamp</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="author" content="moT01">
+  <meta name="author" content="cmccormack">
+</head>
+
+<body>
+  <header>
+    <h1>Exercise Tracker</h1>
+  </header>
+
+  <main>
+    <section id="create_user">
+      <span class="section-title">Create a New User</span>
+      <pre>POST /api/new-user</pre>
+      <form id="new-user-form" action="/api/new-user" method="POST">
+        <div class="input-row"><input type="text" placeholder="username" name="username" minlength="3" maxlength="20" pattern="^\w{3,20}$" title="use only letters, numbers and underscores" required /></div>
+        <button type="submit" class="submit-btn">Register</button>
+      </form>
+    </section>
+
+    <section id="add_exercise">
+      <span class="section-title">Add Exercise</span>
+      <pre>POST /api/exercise/add</pre>
+      <form id="add-exercise-form" action="/api/exercise/add" method="POST">
+        <div class="input-row"><input type="text"   placeholder="username"           name="username"    minlength="3"    maxlength="20" pattern="^\w{3,20}$" title="use only letters, numbers and underscores" required /></div>
+        <div class="input-row"><input type="text"   placeholder="description"        name="description" minlength="3"    maxlength="50"                                                                        required /></div>
+        <div class="input-row"><input type="number" placeholder="duration (minutes)" name="duration"    min="1"          max="9999"                                                                            required /></div>
+        <div class="input-row"><input type="date"   placeholder="date"               name="date"        min="1970-01-01" max="2999-12-31" id="date"                                                            required /></div>
+        <button type="submit" class="submit-btn">Log Exercise</button>
+      </form>
+    </section>
+
+    <section id="get_exercise">
+      <span class="section-title">Create Query to get Exercise Info</span>
+      <form id="query-form">
+        <div class="input-row"><input type="text"   placeholder="username" name="username"  minlength="3"    maxlength="20" pattern="^\w{3,20}$" title="use only letters, numbers and underscores" required /></div><div class="input-row"><u>From Date:</u></div>
+        <div class="input-row"><input type="date"   placeholder="date"     name="from-date" min="1970-01-01" max="2999-12-31"                                                                               /></div><div class="input-row"><u>To Date:</u></div>
+        <div class="input-row"><input type="date"   placeholder="date"     name="to-date"   min="1970-01-01" max="2999-12-31"                                                                               /></div>
+        <div class="input-row"><input type="number" placeholder="limit"    name="limit"     min="0"          max="9999"                                                                                     /></div>
+      </form>
+      <br/>
+      <span class="section-title">Use this URL to get your Info</span>
+      <a id="queryURL" href="https://fcc-exercise-tracker.herokuapp.com/" target="_blank">https://fcc-exercise-tracker.herokuapp.com/</a>
+    </section>
+  </main>
+
+  <script>
+    // Set the placeholder in the exercise date to today
+    const today = new Date()
+    today.setMinutes(today.getMinutes() - today.getTimezoneOffset())
+    document.getElementById("date").value = today.toJSON().slice(0, 10)
+  </script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
